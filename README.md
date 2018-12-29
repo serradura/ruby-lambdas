@@ -1,8 +1,6 @@
 # RubyLambdas
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ruby/lambdas`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Expose Ruby object methods as lambdas (functions).
 
 ## Installation
 
@@ -109,14 +107,15 @@ Slugify =                       # Slugify =
     .>> Strings::Downcase       #     >> Strings::LowerCase \
     .>> Strings::GSub[' ', '-'] #     >> Strings::ReplaceAll[' ', '-']
 
-# Reading the previous composition (Step by step)
-# 1. Convert a given object (first input) as a String
-# 2. Remove all whitespaces from both sides of a string.
-# 3. Convert a string to all lower case.
-# 4. Replace all occurrences of " " by "-".
+# Reading the previous composition (Step by step):
+#   1. Convert a given object (first input) as a String
+#   2. Remove all whitespaces from both sides of a string.
+#   3. Convert a string to all lower case.
+#   4. Replace all occurrences of " " by "-".
 
-# Usage
-
+#########
+# Usage #
+#########
 Slugify.(nil)                        # => ""
 Slugify.(1)                          # => "1"
 Slugify.(1.0)                        # => "1.0"
