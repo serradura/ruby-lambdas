@@ -39,7 +39,7 @@ require "ruby/lambdas"
 Slugify =                       # Slugify =
   Strings::FromObject           #   Strings::String
     .>> Strings::Strip          #     >> Strings::Trim      \
-    .>> Strings::LowerCase      #     >> Strings::LowerCase \
+    .>> Strings::Downcase       #     >> Strings::LowerCase \
     .>> Strings::GSub[' ', '-'] #     >> Strings::ReplaceAll[' ', '-']
 
 # Reading the previous composition (Step by step)
