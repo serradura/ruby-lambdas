@@ -4,7 +4,6 @@ module Strings
   RubyLambdas::Strings::ToExport.tap do |to_export|
     to_export
       .constants
-      .reject { |const| const == :ALIASES }
       .each do |function_name|
         function = to_export.const_get(function_name)
 
