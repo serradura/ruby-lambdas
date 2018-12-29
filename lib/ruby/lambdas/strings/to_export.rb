@@ -9,6 +9,8 @@ module RubyLambdas
 
       Downcase = -> data { data.downcase }
 
+      FromObject = -> data { String(data) }
+
       GSub = -> (pattern, replacement, data) do
         return data.gsub(pattern, &replacement) if replacement.is_a?(::Proc)
 
@@ -19,8 +21,9 @@ module RubyLambdas
     end
 
     ALIASES = {
-      GSub: :ReplaceAll,
       Downcase: :LowerCase,
+      FromObject: :String,
+      GSub: :ReplaceAll,
       Strip: :Trim,
     }.freeze
   end

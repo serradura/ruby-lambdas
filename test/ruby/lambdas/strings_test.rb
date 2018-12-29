@@ -48,6 +48,17 @@ class RubyLambdasStringsTest < Minitest::Test
   end
 
   #
+  # Kernel.String
+  #
+  def test_the_from_function_output
+    assert_equal "", Strings::FromObject.call(nil)
+    assert_equal "1", Strings::FromObject.call(1)
+    assert_equal "1.0", Strings::FromObject.call(1.0)
+
+    assert_same Strings::FromObject, Strings::String
+  end
+
+  #
   # String#gsub
   #
   def test_the_gsub_function_output
