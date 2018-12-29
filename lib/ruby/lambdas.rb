@@ -1,5 +1,5 @@
 require "ruby/lambdas/version"
 
 module RubyLambdas
-  # Your code goes here...
+  require_relative "lambdas/strings"
 end
