@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ruby-lambdas'
+gem 'ruby-lambdas', '~> 0.1.0', require: 'ruby/lambdas'
 ```
 
 And then execute:
@@ -22,7 +22,39 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+**Basics:**
+```ruby
+require "ruby/lambdas"
+
+Strings::Strip.call(" hello ") # => "hello"
+
+# Strings::Trim is an alias to the Strings::Strip function
+Strings::Trim.call(" hello ") # => "hello"
+```
+
+**Composing functions (`RUBY_VERSION >= '2.6.0'`):**
+```ruby
+require "ruby/lambdas"
+                                # -- Alternative syntax --
+Slugify =                       # Slugify =
+  Strings::FromObject           #   Strings::String
+    .>> Strings::Strip          #     >> Strings::Trim      \
+    .>> Strings::LowerCase      #     >> Strings::LowerCase \
+    .>> Strings::GSub[' ', '-'] #     >> Strings::ReplaceAll[' ', '-']
+
+# Reading the previous composition (Step by step)
+# 1. Convert a given object (first input) as a String
+# 2. Remove all whitespaces from both sides of a string.
+# 3. Convert a string to all lower case.
+# 4. Replace all occurrences of " " by "-".
+
+# Usage
+
+Slugify.(nil)                        # => ""
+Slugify.(1)                          # => "1"
+Slugify.(1.0)                        # => "1.0"
+Slugify.(' I WILL be a url slug   ') # => "i-will-be-a-url-slug"
+```
 
 ## Development
 
