@@ -9,7 +9,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ruby-lambdas', '~> 0.1.0', require: 'ruby/lambdas'
+gem 'ruby-lambdas', require: 'ruby/lambdas'
 ```
 
 And then execute:
