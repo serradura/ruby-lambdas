@@ -15,6 +15,16 @@ end
 # Examples #
 ############
 
+#
+# Using common Method Chaining
+#
+def slugify2(value)
+  value.strip.downcase.gsub(' ', '-')
+end
+
+#
+# Using Composable Lambdas
+#
                                 # -- Alternative syntax --
 Slugify =                       # Slugify =
   Strings::Strip                #   Strings::Trim           \
@@ -26,6 +36,9 @@ slug = Slugify.(' I WILL be a url slug   ') # Slugify.call(' I WILL be a url slu
                                             # Slugify[' I WILL be a url slug   ']
 p slug # => "i-will-be-a-url-slug"
 
+#
+# Using Data Pipeline with the `then` method & `ruby/lambdas`
+#
 def slugify(value)
   value
     .then(&Strings::Trim)
@@ -40,10 +53,6 @@ p slugify('    I will be a url SLUG ') # => "i-will-be-a-url-slug"
 ##############
 
 require 'benchmark/ips'
-
-def slugify2(value)
-  value.strip.downcase.gsub(' ', '-')
-end
 
 Benchmark.ips do |x|
   x.report('method chaining') { slugify2(' I WILL be a url slug   ') }
