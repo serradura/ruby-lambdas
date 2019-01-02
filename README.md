@@ -122,6 +122,10 @@ Slugify.(1.0)                        # => "1.0"
 Slugify.(' I WILL be a url slug   ') # => "i-will-be-a-url-slug"
 ```
 
+### Do you like it?
+
+So, look in [examples folder](https://github.com/serradura/ruby-lambdas/tree/master/examples) to see more ideas and benchmarks.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
