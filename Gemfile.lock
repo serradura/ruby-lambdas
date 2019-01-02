@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ruby-lambdas (0.3.0)
+    ruby-lambdas (0.4.0)
 
 GEM
   remote: https://rubygems.org/
