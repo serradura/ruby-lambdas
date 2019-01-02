@@ -15,6 +15,9 @@ end
 # Examples #
 ############
 
+#
+# Using Data Pipeline with the `then` method & `ruby/lambdas`
+#
 class Slugifier
   def initialize(sub, new_sub)
     @sub = sub
@@ -35,8 +38,9 @@ Slugify1 = Slugifier.new(' ', '-')
 p Slugify1.(' I will Be a urL slug   ') # Slugify.call(' I will Be a urL slug   ')
 
 #
-# The code below is the same of the previous.
-# But you don't need to implement the methods, because of the `ruby/lambdas`.
+# The code below is similar to the previous one.
+# It also uses the data pipeline with the `then` method.
+# But instead of the `ruby/lambdas`, it defines instance private methods.
 #
 class Slugifier2
   def initialize(sub, new_sub)
@@ -89,7 +93,7 @@ Slugify3 = Slugifier3.new(' ', '-')
 p Slugify3.(' I will be a URL slug   ')
 
 #
-# Use only Lambdas instead classes
+# Use only Lambdas instead of classes
 #
 Slugifier4 = -> (sub, new_sub) do
   Strings::Strip >> Strings::Downcase >> Strings::GSub[sub, new_sub]
@@ -97,15 +101,11 @@ end
 
 Slugify4 = Slugifier4.call(' ', '-')
 
-
 p Slugify4.(' I will be a URL slug   ')
 
-##############
-# Benchmarks #
-##############
-
-require 'benchmark/ips'
-
+#
+# Using common Method Chaining
+#
 class Slugifier5
   def initialize(sub, new_sub)
     @sub = sub
@@ -120,6 +120,12 @@ end
 Slugify5 = Slugifier5.new(' ', '-')
 
 p Slugify5.(' I will be a URL slug   ')
+
+##############
+# Benchmarks #
+##############
+
+require 'benchmark/ips'
 
 Benchmark.ips do |x|
   x.report('Slugify1') { Slugify1.(' I WILL be a url slug   ') }
