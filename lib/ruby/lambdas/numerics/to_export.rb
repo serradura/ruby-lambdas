@@ -6,22 +6,22 @@ module RubyLambdas
       #
       Add = -> (a, b) { a + b }
 
-      Divide = -> (a, b) { a / b }
+      Divide = -> (b, a) { a / b }
 
-      Subtract = -> (a, b) { a - b }
+      Subtract = -> (b, a) { a - b }
 
       Multiply = -> (a, b) { a * b }
 
       #
       # Comparables
       #
-      GreaterThan = -> (a, b) { a > b }
+      GreaterThan = -> (b, a) { a > b }
 
-      GreaterThanOrEqual = -> (a, b) { a >= b }
+      GreaterThanOrEqual = -> (b, a) { a >= b }
 
-      LessThan = -> (a, b) { a < b }
+      LessThan = -> (b, a) { a < b }
 
-      LessThanOrEqual = -> (a, b) { a <= b }
+      LessThanOrEqual = -> (b, a) { a <= b }
     end
 
     ALIASES = {

@@ -12,11 +12,11 @@ module Numerics
   end
 
   def self./(b)
-    -> a { Divide[a, b] }
+    Divide[b]
   end
 
   def self.-(b)
-    -> a { Subtract[a, b] }
+    Subtract[b]
   end
 
   def self.*(a)
@@ -27,18 +27,18 @@ module Numerics
   # Comparables
   #
   def self.>(b)
-    -> a { GreaterThan[a, b] }
+    GreaterThan[b]
   end
 
   def self.>=(b)
-    -> a { GreaterThanOrEqual[a, b] }
+    GreaterThanOrEqual[b]
   end
 
   def self.<(b)
-    -> a { LessThan[a, b] }
+    LessThan[b]
   end
 
   def self.<=(b)
-    -> a { LessThanOrEqual[a, b] }
+    LessThanOrEqual[b]
   end
 end
