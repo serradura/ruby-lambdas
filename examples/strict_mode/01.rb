@@ -23,7 +23,7 @@ p [2, 4, 8].map(&Numerics + 2) # => [4, 6, 10]
 begin
   p ["2", "4", "8"].map(&Numerics + "2")
 rescue TypeError => e
- p e # => #<TypeError: "2" must be Numeric>
+  p e # => #<TypeError: "2" must be Numeric>
 end
 
 p ["2 ", " 4", "8 "].map(&Strings::Strip) # => ["2", "4", "8"]
@@ -31,5 +31,5 @@ p ["2 ", " 4", "8 "].map(&Strings::Strip) # => ["2", "4", "8"]
 begin
   p [2, 4, 8].map(&Strings::Strip)
 rescue TypeError => e
- p e # => #<TypeError: 2 must be a String>
+  p e # => #<TypeError: 2 must be a String>
 end
