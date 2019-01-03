@@ -1,23 +1,25 @@
 module RubyLambdas
   module Strings
     module ToExport
-      Capitalize = -> data { data.capitalize }
+      Capitalize = -> data { String!(data).capitalize }
 
-      Center = -> (width, data) { data.center(width) }
+      Center = -> (width, data) { String!(data).center(width) }
 
-      CenterWith = -> (width, padstr, data) { data.center(width, padstr) }
+      CenterWith = -> (width, padstr, data) do
+        String!(data).center(width, padstr)
+      end
 
-      Downcase = -> data { data.downcase }
+      Downcase = -> data { String!(data).downcase }
 
       FromObject = -> data { String(data) }
 
-      GSub = -> (pattern, replacement, data) do
-        return data.gsub(pattern, &replacement) if replacement.is_a?(::Proc)
+      GSub = -> (pattern, repl, data) do
+        return String!(data).gsub(pattern, &repl) if repl.is_a?(::Proc)
 
-        data.gsub(pattern, replacement)
+        String!(data).gsub(pattern, repl)
       end
 
-      Strip = -> data { data.strip }
+      Strip = -> data { String!(data).strip }
     end
 
     ALIASES = {

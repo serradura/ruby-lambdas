@@ -1,4 +1,5 @@
 module Numerics
+  require_relative "core/strict_mode/disable"
   require_relative "core/import"
   require_relative "numerics/to_export"
 
