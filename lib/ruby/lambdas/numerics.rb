@@ -1,5 +1,5 @@
 module Numerics
-  require_relative "import"
+  require_relative "core/import"
   require_relative "numerics/to_export"
 
   RubyLambdas::Import.(from: RubyLambdas::Numerics, to: self)
