@@ -20,22 +20,22 @@ class RubyLambdasNumericsLambdasTest < Minitest::Test
   # Numeric#/
   #
   def test_the_divide_functions
-    assert_equal 2, Numerics::Divide.call(4, 2)
+    assert_equal 2, Numerics::Divide.call(2, 4)
 
-    divide_6_by = Numerics::Divide.call(6)
+    divide_by_3 = Numerics::Divide.call(3)
 
-    assert_equal 2, divide_6_by[3]
+    assert_equal 2, divide_by_3[6]
   end
 
   #
   # Numeric#-
   #
   def test_the_subtract_functions
-    assert_equal 1, Numerics::Subtract.call(2, 1)
+    assert_equal 1, Numerics::Subtract.call(1, 2)
 
-    sub1 = Numerics::Subtract.call(1)
+    subtract_3_from = Numerics::Subtract.call(3)
 
-    assert_equal(-2, sub1[3])
+    assert_equal(-2, subtract_3_from[1])
   end
 
   #
@@ -57,11 +57,11 @@ class RubyLambdasNumericsLambdasTest < Minitest::Test
   # Numeric#>
   #
   def test_the_greater_than_function
-    assert_equal true, Numerics::GreaterThan.call(2, 1)
+    assert_equal true, Numerics::GreaterThan.call(1, 2)
 
     gt1 = Numerics::GreaterThan.call(1)
 
-    assert_equal true, gt1[0]
+    assert_equal false, gt1[0]
 
     assert_same Numerics::GreaterThan, Numerics::Gt
   end
