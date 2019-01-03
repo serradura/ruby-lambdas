@@ -122,6 +122,21 @@ Slugify.(1.0)                        # => "1.0"
 Slugify.(' I WILL be a url slug   ') # => "i-will-be-a-url-slug"
 ```
 
+### Strict mode
+
+By default, all functions believe in their given inputs data types. To change this behavior, you can enable the strict mode (data type checking) via `require "ruby/lambdas/strict-mode"`. e.g:
+
+```ruby
+p ["2", "4"].map(&Numerics + "1") # => ["12", "14"]
+
+require "ruby/lambdas/strict-mode"
+
+p ["2", "4"].map(&Numerics + "1") # => TypeError ("1" must be Numeric)
+p ["2", "4"].map(&Numerics + 1)   # => TypeError ("2" must be Numeric)
+p [2, "4"].map(&Numerics + 1)     # => TypeError ("4" must be Numeric)
+p [2, 4].map(&Numerics + 1)       # => [3, 5]
+```
+
 ### Do you like it?
 
 So, look in [examples folder](https://github.com/serradura/ruby-lambdas/tree/master/examples) to see more ideas and benchmarks.
