@@ -4,24 +4,24 @@ module RubyLambdas
       #
       # Operators
       #
-      Add = -> (a, b) { a + b }
+      Add = -> (a, b) { Numeric!(a) + Numeric!(b) }
 
-      Divide = -> (b, a) { a / b }
+      Divide = -> (b, a) { Numeric!(a) / Numeric!(b) }
 
-      Subtract = -> (b, a) { a - b }
+      Subtract = -> (b, a) { Numeric!(a) - Numeric!(b) }
 
-      Multiply = -> (a, b) { a * b }
+      Multiply = -> (a, b) { Numeric!(a) * Numeric!(b) }
 
       #
       # Comparables
       #
-      GreaterThan = -> (b, a) { a > b }
+      GreaterThan = -> (b, a) { Numeric!(a) > Numeric!(b) }
 
-      GreaterThanOrEqual = -> (b, a) { a >= b }
+      GreaterThanOrEqual = -> (b, a) { Numeric!(a) >= Numeric!(b) }
 
-      LessThan = -> (b, a) { a < b }
+      LessThan = -> (b, a) { Numeric!(a) < Numeric!(b) }
 
-      LessThanOrEqual = -> (b, a) { a <= b }
+      LessThanOrEqual = -> (b, a) { Numeric!(a) <= Numeric!(b) }
     end
 
     ALIASES = {
