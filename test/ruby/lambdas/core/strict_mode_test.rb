@@ -20,10 +20,10 @@ class RubyLambdasStrictModeTest < Minitest::Test
     assert_equal 1, Numeric!(1)
     assert_equal "1", String!("1")
 
-    num_err = assert_raises(TypeError) { Numeric!("1") }
+    num_err = assert_raises(Numerics::TypeError) { Numeric!("1") }
     assert_equal "\"1\" must be Numeric", num_err.message
 
-    str_err = assert_raises(TypeError) { String!(1) }
+    str_err = assert_raises(Strings::TypeError) { String!(1) }
     assert_equal "1 must be a String", str_err.message
   end
 

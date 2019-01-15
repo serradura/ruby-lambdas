@@ -2,6 +2,7 @@ module Numerics
   require_relative "core/strict_mode/disable"
   require_relative "core/import"
   require_relative "numerics/to_export"
+  require_relative "numerics/type_error"
 
   RubyLambdas::Import.(from: RubyLambdas::Numerics, to: self)
 

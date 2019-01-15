@@ -6,12 +6,12 @@ module Kernel
   def String!(data)
     return data if data.is_a?(::String)
 
-    raise TypeError, "#{data.inspect} must be a String"
+    raise Strings::TypeError.new(data)
   end
 
   def Numeric!(data)
     return data if data.is_a?(::Numeric)
 
-    raise TypeError, "#{data.inspect} must be Numeric"
+    raise Numerics::TypeError.new(data)
   end
 end
