@@ -131,9 +131,9 @@ p ["2", "4"].map(&Numerics + "1") # => ["12", "14"]
 
 require "ruby/lambdas/strict-mode"
 
-p ["2", "4"].map(&Numerics + "1") # => TypeError ("1" must be Numeric)
-p ["2", "4"].map(&Numerics + 1)   # => TypeError ("2" must be Numeric)
-p [2, "4"].map(&Numerics + 1)     # => TypeError ("4" must be Numeric)
+p ["2", "4"].map(&Numerics + "1") # => Numerics::TypeError ("1" must be Numeric)
+p ["2", "4"].map(&Numerics + 1)   # => Numerics::TypeError ("2" must be Numeric)
+p [2, "4"].map(&Numerics + 1)     # => Numerics::TypeError ("4" must be Numeric)
 p [2, 4].map(&Numerics + 1)       # => [3, 5]
 ```
 
