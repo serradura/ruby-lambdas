@@ -1,6 +1,6 @@
 require "test_helper"
 
-class RubyLambdasNumericsMethodsTest < Minitest::Test
+class Numerics::MethodsTest < Minitest::Test
   #
   # Operators
   #
