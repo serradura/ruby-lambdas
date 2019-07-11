@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/8ce742227db2f760463e/maintainability)](https://codeclimate.com/github/serradura/ruby-lambdas/maintainability)
+
 # RubyLambdas
 
 Expose Ruby object methods as lambdas (functions).
